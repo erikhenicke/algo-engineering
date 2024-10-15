@@ -8,5 +8,6 @@
 void pi_numerical_integration(int);
 void pi_numerical_integration_parallel(int);
 void pi_monte_carlo(int);
+void pi_monte_carlo_parallel(int);
 
 #endif
