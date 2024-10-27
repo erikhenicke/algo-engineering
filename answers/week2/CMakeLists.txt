@@ -1,0 +1,9 @@
+add_executable(week2
+        week2.cpp
+        coding-warmup/race_condition.cpp
+        coding-warmup/unbalanced_workload.cpp
+        coding-warmup/coding_warmup.h
+        coding-warmup/bad_schedule.cpp
+        exam-exercises/pi_numerical_integration.cpp
+        exam-exercises/pi_numerical_integration.h
+)
