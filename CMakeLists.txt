@@ -6,5 +6,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")#-O3 -ffast-math -std=c++14 -f
 
 add_subdirectory("answers/week1")
 add_subdirectory("answers/week2")
+add_subdirectory("answers/week3")
 
 
