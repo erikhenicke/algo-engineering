@@ -1,0 +1,12 @@
+add_executable(week03
+        exam-exercises/exam_exercises_c.h
+        exam-exercises/hello_world.c
+        exam-exercises/fib.c
+        exam-exercises/game_of_life.c
+        exam-exercises/pi_monte_carlo.cpp
+        coding-warmup/coding_warmup.h
+        coding-warmup/mandelbrot.cpp
+        coding-warmup/mandelbrot_solution.cpp
+        coding-warmup/pi_numerical_integration.cpp
+        week03.cpp
+)

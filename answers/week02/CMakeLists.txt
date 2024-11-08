@@ -1,5 +1,5 @@
-add_executable(week2
-        week2.cpp
+add_executable(week02
+        week02.cpp
         coding-warmup/race_condition.cpp
         coding-warmup/unbalanced_workload.cpp
         coding-warmup/coding_warmup.h

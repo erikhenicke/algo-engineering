@@ -81,8 +81,8 @@ void pi_monte_carlo(int n) {
 
 void pi_monte_carlo_parallel(int n) {
 
-  int counter =
-      0;  // counter for points lying in the first quadrant of a unit circle
+  // counter for points lying in the first quadrant of a unit circle
+  int counter = 0;
   auto start_time =
       omp_get_wtime();  // omp_get_wtime() is an OpenMP library routine
 
@@ -95,7 +95,8 @@ void pi_monte_carlo_parallel(int n) {
 
     int local_counter = 0;
 
-    // compute n / num_threads points and test if they lie within the first quadrant of a unit circle
+    // compute n / num_threads points and test if they lie within the first
+    // quadrant of a unit circle
     for (int i = thread_id; i < n; i += num_threads) {
       auto x = zero_to_one(re);  // generate random number between 0.0 and 1.0
       auto y = zero_to_one(re);  // generate random number between 0.0 and 1.0

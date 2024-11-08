@@ -1,5 +1,5 @@
-add_executable(week1
+add_executable(week01
         pi_approximation.h
         pi_approximation.cpp
-        week1.cpp
+        week01.cpp
 )
