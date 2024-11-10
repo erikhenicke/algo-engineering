@@ -175,7 +175,7 @@ void benchmark_threads(const int max_threads, const int64_t repeat,
       {"linewidth", "2"}});
   plt::xlabel("Number of threads", {{"fontsize", "12"}});
   plt::ylabel("Relative speedup against std::sort", {{"fontsize", "12"}});
-  plt::title("Time seedup with varying number of threads", {{"fontsize", "16"}, {"fontweight", "bold"}});
+  plt::title("Time speedup with varying number of threads", {{"fontsize", "16"}, {"fontweight", "bold"}});
   std::vector<int> xticks = {1, 5, 10, 15, 20};
   plt::xticks(xticks);
   std::vector<int> yticks = {0, 2, 4, 6, 8, 10};
@@ -187,7 +187,7 @@ void benchmark_threads(const int max_threads, const int64_t repeat,
   PyRun_SimpleString("plt.grid(which='minor', color='lightgray', linestyle=':', linewidth=0.5)");
   PyRun_SimpleString("plt.minorticks_on()");
   PyRun_SimpleString("plt.axhline(1, lw=1, color='black', linestyle='--')");
-  plt::save("seedup_threads.pdf");
+  plt::save("speedup_threads.png");
   plt::show();
 }
 
@@ -251,7 +251,7 @@ void benchmark_size(const std::vector<double>& sizes, const int64_t repeat,
       {"linewidth", "2"}});
   plt::xlabel("Array size", {{"fontsize", "12"}});
   plt::ylabel("Relative speedup against std::sort", {{"fontsize", "12"}});
-  plt::title("Time seedup with varying array sizes", {{"fontsize", "16"}, {"fontweight", "bold"}});
+  plt::title("Time speedup with varying array sizes", {{"fontsize", "16"}, {"fontweight", "bold"}});
   // std::vector<int> xticks = {1, 5, 10, 15, 20};
   plt::xticks(sizes);
   PyRun_SimpleString("import matplotlib.pyplot as plt");
@@ -264,7 +264,7 @@ void benchmark_size(const std::vector<double>& sizes, const int64_t repeat,
   PyRun_SimpleString("plt.grid(which='minor', color='lightgray', linestyle=':', linewidth=0.5)");
   PyRun_SimpleString("plt.minorticks_on()");
   PyRun_SimpleString("plt.axhline(1, lw=1, color='black', linestyle='--')");
-  plt::save("seedup_sizes.pdf");
+  plt::save("speedup_sizes.png");
   plt::show();
 }
 
@@ -279,6 +279,7 @@ void run_benchmark() {
   }
 
   const int MAX_THREADS = omp_get_max_threads();
-  // benchmark_threads(MAX_THREADS, 10, 10000000);
-  benchmark_size({100, 1000, 10000, 100000, 1000000, 10000000, 100000000}, 10, MAX_THREADS);
+  benchmark_threads(MAX_THREADS, 10, 10000000);
+  benchmark_size({100, 316, 1000, 3160, 10000, 31600, 100000, 316000,
+    1000000, 3160000, 10000000, 31600000, 100000000}, 20, MAX_THREADS);
 }
