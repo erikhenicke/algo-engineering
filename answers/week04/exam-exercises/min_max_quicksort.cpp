@@ -279,7 +279,7 @@ void run_benchmark() {
   }
 
   const int MAX_THREADS = omp_get_max_threads();
-  benchmark_threads(MAX_THREADS, 10, 10000000);
+  benchmark_threads(MAX_THREADS, 1, 10000000);
   benchmark_size({100, 316, 1000, 3160, 10000, 31600, 100000, 316000,
-    1000000, 3160000, 10000000, 31600000, 100000000}, 20, MAX_THREADS);
+    1000000, 3160000, 10000000, 31600000, 100000000}, 1, MAX_THREADS);
 }
