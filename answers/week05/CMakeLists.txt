@@ -11,3 +11,4 @@ add_executable(week05
 )
 
 add_subdirectory(exam-exercises/quantpng)
+add_subdirectory(exam-exercises/fizzbuzz-tests)
